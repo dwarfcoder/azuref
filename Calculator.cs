@@ -7,5 +7,7 @@ namespace AzureF.Function
         public float Add(float p1, float p2) => p1 + p2;
 
         public float Produce(float p1, float p2) => p1 * p2;
+
+        public float Divide(float p1, float p2) => p1 / p2;
     }
 }
