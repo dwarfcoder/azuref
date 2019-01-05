@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-  - script: echo Hello, world! |
+  - script: |
       dotnet build
     displayName: 'Run a dotnet build'
   - task: ArchiveFiles@2
@@ -19,7 +19,6 @@ steps:
       rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
       includeRootFolder: false
       archiveFile: "$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip"
-  - task: PublishArtifacts@1
+  - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(System.DefaultWorkingDirectory)'
-      name: 'drop'
